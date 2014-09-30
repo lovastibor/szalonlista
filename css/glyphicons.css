@@ -1,0 +1,130 @@
+@font-face {
+	font-family: 'doklist';
+	src:url('fonts/doklist.eot?j874y0');
+	src:url('fonts/doklist.eot?#iefixj874y0') format('embedded-opentype'),
+		url('fonts/doklist.woff?j874y0') format('woff'),
+		url('fonts/doklist.ttf?j874y0') format('truetype'),
+		url('fonts/doklist.svg?j874y0#doklist') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-glyphicon-"], [class*=" icon-glyphicon-"] {
+	font-family: 'doklist';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-glyphicon-envelope:before {
+	content: "\2709";
+}
+.icon-glyphicon-edit:before {
+	content: "\270f";
+}
+.icon-glyphicon-cross:before {
+	content: "\e000";
+}
+.icon-glyphicon-comment-alt2-stroke:before {
+	content: "\e001";
+}
+.icon-glyphicon-star-half:before {
+	content: "\e002";
+}
+.icon-glyphicon-search:before {
+	content: "\e003";
+}
+.icon-glyphicon-facebook:before {
+	content: "\e004";
+}
+.icon-glyphicon-calendar:before {
+	content: "\e00b";
+}
+.icon-glyphicon-clock:before {
+	content: "\e00c";
+}
+.icon-glyphicon-thumbsup:before {
+	content: "\e00d";
+}
+.icon-glyphicon-money:before {
+	content: "\e00e";
+}
+.icon-glyphicon-thumbs-up-full:before {
+	content: "\e00f";
+}
+.icon-glyphicon-thumbs-up-line:before {
+	content: "\e010";
+}
+.icon-glyphicon-pointer-logo:before {
+	content: "\e011";
+}
+.icon-glyphicon-home:before {
+	content: "\e021";
+}
+.icon-glyphicon-marker:before {
+	content: "\e062";
+}
+.icon-glyphicon-remove:before {
+	content: "\e600";
+}
+.icon-glyphicon-swipe:before {
+	content: "\e601";
+}
+.icon-glyphicon-money-2:before {
+	content: "\e602";
+}
+.icon-glyphicon-uniF000:before {
+	content: "\f000";
+}
+.icon-glyphicon-clock-2:before {
+	content: "\e012";
+}
+.icon-glyphicon-ok:before {
+	content: "\e013";
+}
+.icon-glyphicon-wrong:before {
+	content: "\e014";
+}
+.icon-glyphicon-rounded-star:before {
+	content: "\e016";
+}
+.icon-glyphicon-google-plus:before {
+	content: "\e017";
+}
+.icon-glyphicon-star-border:before {
+	content: "\e00a";
+}
+.icon-glyphicon-star:before {
+	content: "\e009";
+}
+.icon-glyphicon-user:before {
+	content: "\e008";
+}
+.icon-glyphicon-phone:before {
+	content: "\e007";
+}
+.icon-glyphicon-earth:before {
+	content: "\e006";
+}
+.icon-glyphicon-heart:before {
+	content: "\e005";
+}
+.icon-glyphicon-stetoscope:before {
+	content: "\e604";
+}
+.icon-glyphicon-doktor:before {
+	content: "\e603";
+}
+.icon-glyphicon-sign-in:before {
+	content: "\e605";
+}
+.icon-glyphicon-image-upload:before {
+	content: "\e606";
+} 

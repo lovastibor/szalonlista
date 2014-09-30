@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="img/favicon.png">
+    
+    <title>Szalonlista</title>
+    
+    <!-- CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/glyphicons.css" rel="stylesheet">
+  
+
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    	<script src="assets/js/html5shiv.js"></script>
+    	<script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+    
+    <link type="text/css" rel="stylesheet" href="mmenu/jquery.mmenu.all.css" />
+
+</head>
+ 
+<body data-spy="scroll" data-target="#navbar-adminmenu">
+<div>
+<!-- nav + header -->
+<nav id="header-nav" class="navbar navbar-default mm-fixed-top" role="navigation">
+    <div class="container">
+    <div class="navbar-header">
+    	
+        <!-- mobil navigation menu -->
+        <a href="#menu-left" class="navbar-toggle btn btn-default">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+    	</a>
+        <nav id="menu-left" class="mm-menu mm-horizontal mm-ismenu">
+            <ul>
+            	<li class="menu-left-search">
+                <span><strong>Keresés az oldalon</strong><br>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="search" class="form-control input-lg" placeholder="pl. fogászati röntgen">
+                    </div>
+                    <button type="submit" class="btn btn-default btn-lg btn-search-grey"><span class="icon-glyphicon-search"></span> <span class="hidden-xs hidden-sm">Keresés</span></button>
+                </form></span>
+        		</li>
+                <li><a href="#treatments">Kezelések</a></li>
+                <li><a href="#doctors">Orvosok</a></li>
+                <li><a href="#reservation">Időpont foglalás</a></li>
+                <li><a href="#patients">Betegnyilvántartás</a></li>
+                <li><a href="#highlight">Kiemelés</a></li>
+                <li><a href="#balance">Egyenleg</a></li>
+            </ul>
+        </nav>
+        <!-- end mobil navigation menu -->
+    	
+        <a class="navbar-brand" href="#"><img src="img/logo.png" alt="Doklist.com"></a>
+    </div>
+    <ul class="nav navbar-nav navbar-right navbar-my-doklist-link">
+        <li class="dropdown">
+        	
+            <!-- mobil navigation user -->
+            <a href="#menu-right" class="dropdown-toggle my-doklist-link visible-xs">
+            <span aria-hidden="true" class="icon-glyphicon-doktor"><img src="img/doc-sample-500.jpg" class="img-responsive"></span> <span class="visible-lg">Obadela Thompson</span> <b class="caret caret-big"></b></a>
+            <nav id="menu-right" class="mm-menu mm-horizontal mm-light mm-ismenu mm-right">
+            	<ul>
+                    <li><a data-toggle="modal" href="index-admin.html#regModal">* Regisztráció *</a></li>
+                    <li><a href="#">Adatlapom szerkesztése</a></li>
+                    <li><a href="#">Új kezelés felvétele</a></li>
+                    <li><a href="#">Vélemények (3 új)</a></li>
+                    <li><a href="#">Kilépés</a></li>
+                </ul>
+			</nav>
+            <!-- end mobil navigation user -->
+            
+            <a href="#" class="dropdown-toggle my-doklist-link hidden-xs" data-toggle="dropdown">
+            <span aria-hidden="true" class="icon-glyphicon-doktor"><img src="img/doc-sample-500.jpg" class="img-responsive"></span> <span class="visible-lg">Obadela Thompson</span> <b class="caret caret-big"></b></a>
+            <ul class="dropdown-menu font-16">
+                <li><a data-toggle="modal" href="#regModal">* Regisztráció *</a></li>
+                <li><a href="#">Adatlapom szerkesztése</a></li>
+                <li><a href="#">Új kezelés felvétele</a></li>
+                <li><a href="#">Vélemények (3 új)</a></li>
+                <li><a href="#">Kilépés</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    </div>
+</nav>
+<!-- end nav + header -->
+
+<!-- main search -->
+<div class="hero-container">
+    <div class="overlay"></div>
+
+	<div class="wrapper">
+<div class="main-search">
+            
+            <div class="search-text">
+            <div class="container">
+            <h2 class="search-text-intro">Válogass<span class="highliht-text"> 1 505 </span>szalon<br><span class="highliht-text">  40 490 </span>szolgáltatása közül!</h2>
+            </div>
+            <div class="search-form">
+            
+            <form class="form-inline" role="form">
+            <div class="row">
+                <div class="col-md-5 col-sm-6 input-field-one">
+                    <div class="form-group">
+                        <label for="searchText1">Milyen szolgáltatást keresel?</label>
+                        <input type="text" class="form-control input-lg" id="searchText1" placeholder="pl. fogászati röntgen">
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-6 input-field-two">
+                    <div class="form-group">
+                        <label for="searchText2">Melyik településen vagy kerületben keresed?</label>
+                        <input type="text" class="form-control input-lg" id="searchText2" placeholder="pl. Budapest, V. kerület">
+                    </div>
+                </div>
+                <div class="col-md-2 search-button">
+                    <button type="submit" class="btn btn-default btn-primary btn-lg btn-block"><span class="icon-glyphicon-search"></span> Keresés</button>
+                </div>
+            </div>
+            </form>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+    <div class="bg-pic"></div>
+</div>
+<div class="carousel-line">
+<div class="container">
+
+<div class="carousel">
+
+
+
+                <!-- Controls -->
+                <div class="control controlshidden-xs">
+                    <a class="left fa fa-chevron-left btn btn-success" href="#carousel-example"
+                        data-slide="prev">
+                    </a><a class="right fa fa-chevron-right btn btn-success" href="#carousel-example"
+                            data-slide="next"></a>
+                </div>
+        <div id="carousel-example" class="carousel slide hidden-xs" data-ride="carousel">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="price col-md-12">
+                                            <h5>
+                                                Ilona szépségszalon</h5>
+                                                <p>1027 Budapest, Fazekas u. 22.
+                                                    Kozmetika</p>
+                                        </div>
+                                        <div class="rating hidden-sm col-md-12">
+                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                            </i><i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="separator">
+    
+                                        <p class="btn-details">
+                                            <a href="http://www.jquery2dotnet.com" class="hidden-sm">Több információ</a></p>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="price col-md-12">
+                                            <h5>
+                                                Ilona szépségszalon</h5>
+                                                <p>1027 Budapest, Fazekas u. 22.
+                                                    Kozmetika</p>
+                                        </div>
+                                        <div class="rating hidden-sm col-md-12">
+                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                            </i><i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="separator">
+                        
+                                        <p class="btn-details">
+                                            <a href="http://www.jquery2dotnet.com" class="hidden-sm">Több információ</a></p>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="price col-md-12">
+                                            <h5>
+                                                Ilona szépségszalon</h5>
+                                                <p>1027 Budapest, Fazekas u. 22.
+                                                    Kozmetika</p>
+                                        </div>
+                                        <div class="rating hidden-sm col-md-12">
+                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                            </i><i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="separator">
+                        
+                                        <p class="btn-details">
+                                            <a href="http://www.jquery2dotnet.com" class="hidden-sm">Több információ</a></p>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="price col-md-12">
+                                            <h5>
+                                                Ilona szépségszalon</h5>
+                                                <p>1027 Budapest, Fazekas u. 22.
+                                                    Kozmetika</p>
+                                        </div>
+                                        <div class="rating hidden-sm col-md-12">
+                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                            </i><i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="separator">
+                        
+                                        <p class="btn-details">
+                                           <a href="http://www.jquery2dotnet.com" class="hidden-sm">Több információ</a></p>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="price col-md-12">
+                                            <h5>
+                                                Ilona szépségszalon</h5>
+                                                 <p>1027 Budapest, Fazekas u. 22.
+                                                    Kozmetika</p>
+                                        </div>
+                                        <div class="rating hidden-sm col-md-12">
+                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                            </i><i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="separator">
+    
+                                        <p class="btn-details">
+                                            <a href="http://www.jquery2dotnet.com" class="hidden-sm">Több információ</a></p>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="price col-md-12">
+                                            <h5>
+                                                Ilona szépségszalon</h5>
+                                                 <p>1027 Budapest, Fazekas u. 22.
+                                                    Kozmetika</p>
+                                        </div>
+                                        <div class="rating hidden-sm col-md-12">
+                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                            </i><i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="separator">
+                        
+                                        <p class="btn-details">
+                                            <a href="http://www.jquery2dotnet.com" class="hidden-sm">Több információ</a></p>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="price col-md-12">
+                                            <h5>
+                                                Ilona szépségszalon</h5>
+                                                 <p>1027 Budapest, Fazekas u. 22.
+                                                    Kozmetika</p>
+                                        </div>
+                                        <div class="rating hidden-sm col-md-12">
+                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                            </i><i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="separator">
+                        
+                                        <p class="btn-details">
+                                            <a href="http://www.jquery2dotnet.com" class="hidden-sm">Több információ</a></p>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="col-item">
+                                <div class="photo">
+                                    <img src="http://placehold.it/350x260" class="img-responsive" alt="a" />
+                                </div>
+                                <div class="info">
+                                    <div class="row">
+                                        <div class="price col-md-12">
+                                            <h5>
+                                                Ilona szépségszalon</h5>
+                                                 <p>1027 Budapest, Fazekas u. 22.
+                                                    Kozmetika</p>
+                                        </div>
+                                        <div class="rating hidden-sm col-md-12">
+                                            <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                            </i><i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">
+                                            </i><i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="separator">
+                        
+                                        <p class="btn-details">
+                                            <a href="http://www.jquery2dotnet.com" class="hidden-sm">Több információ</a></p>
+                                    </div>
+                                    <div class="clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+  	
+
+<!-- container -->
+<div class="container">
+
+<div class="row">
+	<div class="col-md-4 col-xs-6">
+    	<div class="service-links-box">
+        	<div class="zoomin image">
+				<a href="#"><img src="img/hair.jpg" alt="Belgyógyászat"></a>
+			</div>
+            <h2><a href="#">Belgyógyászat</a></h2>
+            <ul class="list-unstyled">
+            	<li><a href="#">Vércukor vizsgálat</a></li>
+                <li><a href="#">Ekg</a></li>
+                <li><a href="#">24 órás vérnyomásmérés, ABPM</a></li>
+                <li><a href="#">Dietetikai tanácsadás</a></li>
+                <li><a href="#">Szívultrahang, echokardiográfia</a></li>
+                <li><a href="#">Ultrahangos érvizsgálat, Doppler</a></li>
+                <li><a href="#">Kardiológiai vizsgálat</a></li>
+                <li><a href="#">Belgyógyászati szakorvosi vizsgálat</a></li>
+                <li><a href="#">Endokrinológiai vizsgálat</a></li>
+            </ul>
+            <a href="#" class="all-services-link">További szolgáltatások &raquo;</a>
+        </div>
+    </div>
+    <div class="col-md-4 col-xs-6">
+    	<div class="service-links-box">
+        	<div class="zoomin image">
+				<a href="#"><img src="img/hair.jpg" alt="Bőrgyógyászat"></a>
+			</div>
+            <h2><a href="#">Bőrgyógyászat</a></h2>
+            <ul class="list-unstyled">
+            	<li><a href="#">Anyajegy, melanóma szűrés</a></li>
+                <li><a href="#">Allergia szűrővizsgálat</a></li>
+                <li><a href="#">Bőrnövedékek eltávolítása</a></li>
+                <li><a href="#">PRP, Drakula terápia</a></li>
+                <li><a href="#">Kémiai hámlasztás</a></li>
+                <li><a href="#">Bőrgyógyászati vizsgálat, konzultáció</a></li>
+                <li><a href="#">Végleges szőrtelenítés</a></li>
+                <li><a href="#">Anyajegy eltávolítás</a></li>
+                <li><a href="#">Seprűvéna, értágulat kezelés</a></li>
+            </ul>
+            <a href="#" class="all-services-link">További szolgáltatások &raquo;</a>
+        </div>
+    </div>
+    <div class="col-md-4 col-xs-6">
+    	<div class="service-links-box">
+        	<div class="zoomin image">
+				<a href="#"><img src="img/hair.jpg" alt="Diagnosztika"></a>
+			</div>
+            <h2><a href="#">Diagnosztika</a></h2>
+            <ul class="list-unstyled">
+            	<li><a href="#">Laborvizsgálat</a></li>
+                <li><a href="#">Sportorvosi vizsgálat</a></li>
+                <li><a href="#">Voll diagnosztika</a></li>
+                <li><a href="#">Ultrahang vizsgálat</a></li>
+                <li><a href="#">CT vizsgálatok</a></li>
+                <li><a href="#">Genetikai vizsgálatok, gén teszt</a></li>
+                <li><a href="#">MR vizsgálatok</a></li>
+                <li><a href="#">Röntgen</a></li>
+                <li><a href="#">Szűrőprogramok</a></li>
+            </ul>
+            <a href="#" class="all-services-link">További szolgáltatások &raquo;</a>
+        </div>
+    </div>
+    <div class="col-md-4 col-xs-6">
+    	<div class="service-links-box">
+        	<div class="zoomin image">
+				<a href="#"><img src="img/hair.jpg" alt="Fogászat"></a>
+			</div>
+            <h2><a href="#">Fogászat</a></h2>
+            <ul class="list-unstyled">
+            	<li><a href="#">Vércukor vizsgálat</a></li>
+                <li><a href="#">Ekg</a></li>
+                <li><a href="#">24 órás vérnyomásmérés, ABPM</a></li>
+                <li><a href="#">Dietetikai tanácsadás</a></li>
+                <li><a href="#">Szívultrahang, echokardiográfia</a></li>
+                <li><a href="#">Ultrahangos érvizsgálat, Doppler</a></li>
+                <li><a href="#">Kardiológiai vizsgálat</a></li>
+                <li><a href="#">Belgyógyászati szakorvosi vizsgálat</a></li>
+                <li><a href="#">Endokrinológiai vizsgálat</a></li>
+            </ul>
+            <a href="#" class="all-services-link">További szolgáltatások &raquo;</a>
+        </div>
+    </div>
+    <div class="col-md-4 col-xs-6">
+    	<div class="service-links-box">
+        	<div class="zoomin image">
+				<a href="#"><img src="img/hair.jpg" alt="Fül-orr gégészet"></a>
+			</div>
+            <h2><a href="#">Fül-orr gégészet</a></h2>
+            <ul class="list-unstyled">
+            	<li><a href="#">Anyajegy, melanóma szűrés</a></li>
+                <li><a href="#">Allergia szűrővizsgálat</a></li>
+                <li><a href="#">Bőrnövedékek eltávolítása</a></li>
+                <li><a href="#">PRP, Drakula terápia</a></li>
+                <li><a href="#">Kémiai hámlasztás</a></li>
+                <li><a href="#">Bőrgyógyászati vizsgálat, konzultáció</a></li>
+                <li><a href="#">Végleges szőrtelenítés</a></li>
+                <li><a href="#">Anyajegy eltávolítás</a></li>
+                <li><a href="#">Seprűvéna, értágulat kezelés</a></li>
+            </ul>
+            <a href="#" class="all-services-link">További szolgáltatások &raquo;</a>
+        </div>
+    </div>
+    <div class="col-md-4 col-xs-6">
+    	<div class="service-links-box">
+        	<div class="zoomin image">
+				<a href="#"><img src="img/hair.jpg" alt="Ideggyógyászat"></a>
+			</div>
+            <h2><a href="#">Ideggyógyászat</a></h2>
+            <ul class="list-unstyled">
+            	<li><a href="#">Laborvizsgálat</a></li>
+                <li><a href="#">Sportorvosi vizsgálat</a></li>
+                <li><a href="#">Voll diagnosztika</a></li>
+                <li><a href="#">Ultrahang vizsgálat</a></li>
+                <li><a href="#">CT vizsgálatok</a></li>
+                <li><a href="#">Genetikai vizsgálatok, gén teszt</a></li>
+                <li><a href="#">MR vizsgálatok</a></li>
+                <li><a href="#">Röntgen</a></li>
+                <li><a href="#">Szűrőprogramok</a></li>
+            </ul>
+            <a href="#" class="all-services-link">További szolgáltatások &raquo;</a>
+        </div>
+    </div>
+</div>
+
+</div>
+<!-- end container -->
+
+<!-- footer -->
+
+<footer>
+
+<div class="footer-usp">
+<div class="container">
+	<div class="row">
+    	<div class="col-sm-4">
+        	<div class="usp-element">
+            	<span class="icon-glyphicon-ok"></span>
+                <strong>Helló doki</strong><br>nem kell félni nem fog fájni
+            </div>
+        </div>
+        <div class="col-sm-4">
+        	<div class="usp-element">
+            	<span class="icon-glyphicon-ok"></span>
+                <strong>Helló doki</strong><br>nem kell félni nem fog fájni
+            </div>
+        </div>
+        <div class="col-sm-4">
+        	<div class="usp-element">
+            	<span class="icon-glyphicon-ok"></span>
+                <strong>Helló doki</strong><br>nem kell félni nem fog fájni
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="footer-links">
+<div class="container">
+<div class="row">
+	<div class="col-sm-2 marginbottom-30">
+    	<p class="font-20">Rólunk</p>
+        <ul class="footer-link-list">
+        	<li><a href="#">Bemutatkozás</a></li>
+			<li><a href="#">Adatvédelem</a></li>
+			<li><a href="#">Regisztáció</a></li>
+			<li><a href="#">Belépés</a></li>
+        </ul>
+        <a href="/"><img src="img/logo-footer.png" alt="Doklist.com" class="img-responsive"></a>
+    </div>
+    <div class="col-sm-7 marginbottom-30">
+    	<p class="font-20">Rendelőlista a közeledben</p>
+        <a href="http://aszod.Doklist.com" target="_self">Aszód</a>, <a href="http://baja.Doklist.com" target="_self">Baja</a>, <a href="http://balatonfured.Doklist.com" target="_self">Balatonfüred</a>, <a href="http://baracska.Doklist.com" target="_self">Baracska</a>, <a href="http://bekescsaba.Doklist.com" target="_self">Békéscsaba</a>, <a href="http://berettyoujfalu.Doklist.com" target="_self">Berettyóújfalu</a>, <a href="http://biatorbagy.Doklist.com" target="_self">Biatorbágy</a>, <a href="http://boly.Doklist.com" target="_self">Bóly</a>, <a href="http://budakeszi.Doklist.com" target="_self">Budakeszi</a>, <a href="http://budaors.Doklist.com" target="_self">Budaörs</a>, <a href="http://budapest.Doklist.com" target="_self">Budapest</a>, <a href="http://budapest-1.Doklist.com" target="_self">I.&nbsp;kerület</a>, <a href="http://budapest-10.Doklist.com" target="_self">X.&nbsp;kerület</a>, <a href="http://budapest-11.Doklist.com" target="_self">XI.&nbsp;kerület</a>, <a href="http://budapest-12.Doklist.com" target="_self">XII.&nbsp;kerület</a>, <a href="http://budapest-13.Doklist.com" target="_self">XIII.&nbsp;kerület</a>, <a href="http://budapest-14.Doklist.com" target="_self">XIV.&nbsp;kerület</a>, <a href="http://budapest-15.Doklist.com" target="_self">XV.&nbsp;kerület</a>, <a href="http://budapest-16.Doklist.com" target="_self">XVI.&nbsp;kerület</a>, <a href="http://budapest-17.Doklist.com" target="_self">XVII.&nbsp;kerület</a>, <a href="http://budapest-18.Doklist.com" target="_self">XVIII.&nbsp;kerület</a>, <a href="http://budapest-19.Doklist.com" target="_self">XIX.&nbsp;kerület</a>, <a href="http://budapest-2.Doklist.com" target="_self">II.&nbsp;kerület</a>, <a href="http://budapest-20.Doklist.com" target="_self">XX.&nbsp;kerület</a>, <a href="http://budapest-21.Doklist.com" target="_self">XXI.&nbsp;kerület</a>, <a href="http://budapest-22.Doklist.com" target="_self">XXII.&nbsp;kerület</a>, <a href="http://budapest-23.Doklist.com" target="_self">XXIII.&nbsp;kerület</a>, <a href="http://budapest-3.Doklist.com" target="_self">III.&nbsp;kerület</a>, <a href="http://budapest-4.Doklist.com" target="_self">IV.&nbsp;kerület</a>, <a href="http://budapest-5.Doklist.com" target="_self">V.&nbsp;kerület</a>, <a href="http://budapest-6.Doklist.com" target="_self">VI.&nbsp;kerület</a>, <a href="http://budapest-7.Doklist.com" target="_self">VII.&nbsp;kerület</a>, <a href="http://budapest-8.Doklist.com" target="_self">VIII.&nbsp;kerület</a>, <a href="http://budapest-9.Doklist.com" target="_self">IX.&nbsp;kerület</a>, <a href="http://cegled.Doklist.com" target="_self">Cegléd</a>, <a href="http://csenger.Doklist.com" target="_self">Csenger</a>, <a href="http://dabas.Doklist.com" target="_self">Dabas</a>, <a href="http://debrecen.Doklist.com" target="_self">Debrecen</a>, <a href="http://dorog.Doklist.com" target="_self">Dorog</a>, <a href="http://dunaharaszti.Doklist.com" target="_self">Dunaharaszti</a>, <a href="http://dunakeszi.Doklist.com" target="_self">Dunakeszi</a>, <a href="http://dunaujvaros.Doklist.com" target="_self">Dunaújváros</a>, <a href="http://eger.Doklist.com" target="_self">Eger</a>, <a href="http://enying.Doklist.com" target="_self">Enying</a>, <a href="http://erd.Doklist.com" target="_self">Érd</a>, <a href="http://erdokertes.Doklist.com" target="_self">Erdőkertes</a>, <a href="http://esztergom.Doklist.com" target="_self">Esztergom</a>, <a href="http://gesztered.Doklist.com" target="_self">Geszteréd</a>, <a href="http://god.Doklist.com" target="_self">Göd</a>, <a href="http://godollo.Doklist.com" target="_self">Gödöllő</a>
+    </div>
+    <div class="col-sm-3 marginbottom-30">
+    	<p class="font-20">Rendelőknek</p>
+        <ul class="footer-link-list">
+        	<li><a href="#">Regisztráció</a></li>
+			<li><a href="#">Belépés</a></li>
+			<li><a href="#">ÁSZF</a></li>
+			<li><a href="#">Kíváló Rendelő program</a></li>
+            <li><a href="#">Időpontfoglalás</a></li>
+        </ul>
+    </div>
+</div>
+</div>
+<div class="footer-bottom-line">
+	<div class="container">
+     <div class="col-sm-6">
+    	<p>Oldalainkon a rendelők által szolgáltatott információk és árak tájékoztató jellegűek, kérünk, hogy a szolgáltatás igénybevétele előtt a rendelő honlapján is tájékozódj. Az esetleges hibákért, elírásokért nem áll módunkban felelősséget vállalni.</p>
+    </div>
+     <div class="col-sm-6 impressum">
+        <p>
+        © 2013 www.doklist.com Minden jog fenntartva.
+        </p>
+    </div>
+    </div>
+</div>
+</div>
+
+</footer>
+<!-- end footer -->
+</div> 
+<!-- map modal -->
+<div class="modal fade map-modal" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="mapModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Térkép: Dr Obadela Thompson</h4>
+            </div>
+            <div class="modal-body">
+                <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?daddr=ahamz%4047.285284552580066,19.893150329589844&amp;ie=UTF8&amp;t=m&amp;ll=47.285285,19.89315&amp;spn=0.003115,0.005622&amp;z=12&amp;output=embed"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Térkép bezárása</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end map modal -->
+
+<!-- registration modal -->
+<div class="modal fade registration-modal" id="regModal" tabindex="-1" role="dialog" aria-labelledby="regModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+    <div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    	<h4 class="modal-title">Készítsd el Doklist.com fiókod</h4>
+    </div>
+    <div class="modal-body">
+    	<div class="well well-small"><p><strong>Miért jó, ha van Doklist.com fiókod?</strong></p>
+    		<div class="usp-element">
+            	<span class="icon-glyphicon-ok"></span>
+                <strong>Helló doki</strong><br>nem kell félni nem fog fájni
+            </div>
+            <div class="usp-element">
+            	<span class="icon-glyphicon-ok"></span>
+                <strong>Helló doki</strong><br>nem kell félni nem fog fájni
+            </div>
+        </div>
+        <div class="text-center social-reg-buttons">
+            <p><a href="#" class="btn btn-facebook btn-block"><span class="icon-glyphicon-facebook"></span> Regisztráció Facebook fiókkal</a>
+            <a href="#" class="btn btn-danger btn-block"><span class="icon-glyphicon-google-plus"></span> Regisztráció Google+ fiókkal</a></p>
+            <p>Csak 2 kattintás! Nem posztolunk semmit a faladra, csak a regisztrációhoz használjuk az adatokat!</p>
+        </div>
+        <div class="hr-text">
+            <div class="hr-text-holder">vagy</div>
+            <div class="hr-rule-left"></div>
+            <div class="hr-rule-right"></div>
+        </div>
+        <p class="text-center reg-email-link"><a href="#"><span class="caret caret-right"></span>Regisztrálj email címeddel</a></p>
+        <form role="form">
+        	<div class="form-group">
+    	        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Szolgáltató neve" data-toggle="popover" title="" data-content="Ez fog az adatlapodon megjelenni" data-original-title="Miért adj meg nevet?">
+            </div>
+            <div class="form-group">
+    	        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="E-mail cím" data-toggle="popover" title="" data-content="Ezen keresztül fogunk Veled kommunikálni" data-original-title="Miért adj meg email címet?">
+            </div>
+            <div class="form-group">
+    	        <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Jelszó" data-toggle="popover" title="" data-content="Amit könnyen megjegyzel de mások nem ismernek" data-original-title="Milyen jelszót adj meg?">
+            </div>
+            <div class="checkbox">
+                <label>
+                	<input type="checkbox" value="">
+                	<small class="font-12">Elfogadom az <a href="#">általános szerződési feltételeket</a>.</small>
+                </label>
+            </div>
+            <a href="#" class="btn btn-primary btn-block">Regisztráció</a>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Ablak bezárása</button>
+    </div>
+</div>
+</div>
+</div>
+<!-- end registration modal -->
+
+<!-- add doctor - add treatments modal -->
+<div class="modal fade modal-slim" id="addTreatmentModal" tabindex="-1" role="dialog" aria-labelledby="regModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+    <div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    	<h4 class="modal-title">Szolgáltatások hozzáadása</h4>
+    </div>
+    <div class="modal-body">
+    	<p><a href="#">Összes kijelölése</a> | <a href="#">Kijelölések megszüntetése</a>
+    	<form role="form">
+            <div class="checkbox">
+                <label>
+	                <input type="checkbox" checked> Esztétikus restauráció
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+	                <input type="checkbox"> Fémkerámia korona/hídtag
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+	                <input type="checkbox" checked> FOGBEÜLTETÉS - MIS® fog implantátum rendszer
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+	                <input type="checkbox"> Kombinált fogpótlás állcsontonként
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+	                <input type="checkbox" checked> FOGÁSZATI ÁLLAPOTFELMÉRÉS
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+	                <input type="checkbox" checked> KEZELÉSI TERV KÉSZÍTÉSE
+                </label>
+            </div>
+            <a href="#" class="btn btn-primary">Mentés</a>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Ablak bezárása</button>
+    </div>
+</div>
+</div>
+</div>
+<!-- end add doctor - add treatments modal -->
+ 
+<!-- JavaScript -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+
+
+<script type="text/javascript" src="mmenu/jquery.mmenu.min.all.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
+<script src="js/icheck.js"></script>
+<script src="js/scripts.js"></script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="img/favicon.png">
+    
+    <title>Szalonlista</title>
+    
+    <!-- CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/glyphicons.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- FONT -->
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    	<script src="assets/js/html5shiv.js"></script>
+    	<script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+    
+    <link type="text/css" rel="stylesheet" href="mmenu/jquery.mmenu.all.css" />
+    
+</head>
+ 
+<body data-spy="scroll" data-target="#navbar-adminmenu">
+<div>
+
+<!-- nav + header -->
+<nav id="header-nav" class="navbar navbar-default mm-fixed-top nav-down" role="navigation">
+    <div class="container">
+    <div class="navbar-header">
+    	
+        <!-- mobil navigation menu -->
+        <a href="#menu-left" class="navbar-toggle btn btn-default">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+    	</a>
+        <nav id="menu-left" class="mm-menu mm-horizontal mm-ismenu">
+            <ul>
+            	<li class="menu-left-search">
+                <span><strong>Keresés az oldalon</strong><br>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="search" class="form-control input-lg" placeholder="pl. fogászati röntgen">
+                    </div>
+                    <button type="submit" class="btn btn-default btn-lg btn-search-grey"><span class="icon-glyphicon-search"></span> <span class="hidden-xs hidden-sm">Keresés</span></button>
+                </form></span>
+        		</li>
+                <li><a href="#treatments">Kezelések</a></li>
+                <li><a href="#doctors">Orvosok</a></li>
+                <li><a href="#reservation">Időpont foglalás</a></li>
+                <li><a href="#patients">Betegnyilvántartás</a></li>
+                <li><a href="#highlight">Kiemelés</a></li>
+                <li><a href="#balance">Egyenleg</a></li>
+            </ul>
+        </nav>
+        <!-- end mobil navigation menu -->
+    	
+        <a class="navbar-brand" href="#"><img src="img/logo.png" alt="Doklist.com"></a>
+    </div>
+    <div class="collapse navbar-collapse">
+    	<form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+            	<input type="search" class="form-control input-lg" placeholder="pl. fogászati röntgen">
+            </div>
+        	<button type="submit" class="btn btn-default btn-lg btn-search-grey"><span class="icon-glyphicon-search"></span> <span class="hidden-xs hidden-sm">Keresés</span></button>
+        </form>
+    </div>
+    <ul class="nav navbar-nav navbar-right navbar-my-doklist-link">
+        <li class="dropdown">
+        	
+            <!-- mobil navigation user -->
+            <a href="#menu-right" class="dropdown-toggle my-doklist-link visible-xs">
+            <span aria-hidden="true" class="icon-glyphicon-doktor"><img src="img/doc-sample-500.jpg" class="img-responsive"></span> <span class="visible-lg">Obadela Thompson</span> <b class="caret caret-big"></b></a>
+            <nav id="menu-right" class="mm-menu mm-horizontal mm-light mm-ismenu mm-right">
+            	<ul>
+                    <li><a data-toggle="modal" href="index-admin.html#regModal">* Regisztráció *</a></li>
+                    <li><a href="#">Adatlapom szerkesztése</a></li>
+                    <li><a href="#">Új kezelés felvétele</a></li>
+                    <li><a href="#">Vélemények (3 új)</a></li>
+                    <li><a href="#">Kilépés</a></li>
+                </ul>
+			</nav>
+            <!-- end mobil navigation user -->
+            
+            <a href="#" class="dropdown-toggle my-doklist-link hidden-xs" data-toggle="dropdown">
+            <span aria-hidden="true" class="icon-glyphicon-doktor"><img src="img/doc-sample-500.jpg" class="img-responsive"></span> <span class="visible-lg">Obadela Thompson</span> <b class="caret caret-big"></b></a>
+            <ul class="dropdown-menu font-16">
+                <li><a data-toggle="modal" href="#regModal">* Regisztráció *</a></li>
+                <li><a href="#">Adatlapom szerkesztése</a></li>
+                <li><a href="#">Új kezelés felvétele</a></li>
+                <li><a href="#">Vélemények (3 új)</a></li>
+                <li><a href="#">Kilépés</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    </div>
+    
+
+    
+</nav>
+<!-- end nav + header -->
+
+<!-- inpage menu -->
+<div class="navbar-adminmenu-affix-holder hidden-xs">
+<div class="container-grey" data-spy="affix" data-offset-top="97">
+<div class="container">
+<nav class="navbar navbar-default navbar-adminmenu" id="navbar-adminmenu" role="navigation">
+    <div class="navbar-header">
+    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex2-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+    	</button>
+        <p class="navbar-text visible-xs">Admin beállítások</p>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex2-collapse">
+        <ul class="nav navbar-nav second-menu">
+            <li><a href="#treatments">Kezelések</a></li>
+            <li><a href="#doctors">Orvosok</a></li>
+            <li><a href="#reservation">Időpont foglalás</a></li>
+            <li><a href="#ratings">Vélemények</a></li>
+        </ul>
+    </div>
+</nav>
+</div>
+</div>
+</div>
+<!-- end inpage menu -->
+
+
+<div id="map-canvas2"></div>
+<!-- container -->
+<div class="first-info-box">
+<div class="container">
+<div class="content-bg">
+    <!-- breadcrumb -->
+    <div class="breadcrumbs-container hidden-xs">
+    <div class="container">
+    <ul class="breadcrumbs">
+        <li><a href="">Főoldal</a></li>
+        <li><a href="">Fogászat</a></li>
+        <li class="current">Budapest</li>
+    </ul>
+    </div>
+    </div>
+    <br>
+    <!-- end breadcrumb -->
+<!-- doctor name -->
+<div class="doctor-name">
+<div class="row">
+    <div class="col-lg-9 col-md-9 col-sm-9">
+        <h1>Ilona szépségszalon</h1>
+        <div class="font-20">fodrászat, smink, manikür</div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3">
+        <span class="wish"></span>
+        <span class="icon-glyphicon-rounded-star"></span>
+    </div>
+</div>
+<hr>
+</div>
+<!-- end doctor name -->
+<div class="row doctor-datas">
+    <!-- doctor datas -->
+    <div class="col-lg-3 col-md-3 col-xs-6 text-center">
+        <img src="img/doc-sample-500.jpg" class="img-responsive marginbottom-30 margin-auto" alt="">
+        <a href="#" class="btn btn-primary btn-lg btn-block btn-addon-lg marginbottom-30 online-idopont"><span class="icon-glyphicon-clock"></span>Online időpontfoglalás&nbsp;»</a>
+    </div>
+    <div class="col-lg-9 col-md-9 col-xs-6">
+        <div class="doctor-datas-lastrating row">
+        	<div class="col-lg-5 col-md-5 pull-right marginbottom-30">
+            	<div class="well text-center">
+                	<span class="font-36">3.2/5</span><br>
+                    <span class="font-20">13 értékelés alapján</span><br>
+                    <div class="color-aaa"><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star-half red"></span><span class="icon-glyphicon-star"></span></div>
+                </div>
+                <div class="hidden-xs">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" ></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="http://placehold.it/500x500" alt="...">
+      <div class="carousel-caption">
+        </div>
+    </div>
+    <div class="item">
+      <img src="http://placehold.it/500x500" alt="...">
+      <div class="carousel-caption">
+
+      </div>
+    </div>
+        <div class="item">
+      <img src="http://placehold.it/500x500" alt="...">
+      <div class="carousel-caption">
+
+      </div>
+    </div>
+  </div>
+
+</div>
+                </div>
+            </div>
+        	<div class="col-lg-7 col-md-7 pull-left marginbottom-30">
+            	<ul class="doctor-datas-list list-unstyled">
+                   	<li><span class="icon-glyphicon-phone" data-toggle="tooltiptop" title="Telefonszám"></span> <div class="white-fade-cover-holder">06 70 / 123 45 67<span class="white-fade-cover"></span></div></li>
+                	<li><span class="icon-glyphicon-envelope" data-toggle="tooltiptop" title="E-mail cím"></span> <div class="white-fade-cover-holder">obadela@thompson.hu<span class="white-fade-cover"></span></div></li>
+                    <li><span class="icon-glyphicon-earth"  data-toggle="tooltiptop" title="Weboldal címe"></span> http://www.obadela.hu</li>
+                	<li><span class="icon-glyphicon-cross" data-toggle="tooltiptop" title="Kezelések"></span> diagnosztika, esztétikai fogászat, labordiagnosztika... <a href="#">kezelések listája »</a></li>
+                    <li><span class="icon-glyphicon-ok" data-toggle="tooltiptop" title="Foglalási módok"></span> e-mail, telefon, személyesen</li>
+                    <li><span class="icon-glyphicon-money-2" data-toggle="tooltiptop" title="Fizetési módok"></span> készpénz, bankkártya, OEP egészségkártya</li>
+                </ul>
+                <p>Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta. Nulla quis lorem ut libero malesuada feugiat. Donec rutrum congue leo eget malesuada... <a href="#">bővebben<span class="caret"></span></a></p>
+            </div>
+            
+        </div>
+    </div>
+    <!-- end doctor datas -->
+</div>
+</div>
+</div>
+
+<!-- end container -->
+
+<br>
+<!-- container -->
+<div class="container">
+<div class="content-bg">
+<!-- clinics list -->
+<h2 class="h2-iconic-underlined" id="treatments">
+    <span class="icon-glyphicon-pointer-logo"></span>Rendelők
+</h2>
+
+<div class="clinics-list marginbottom-30">
+	<div class="row">
+	<div class="col-sm-1 col-xs-3"><a href="#"><img src="img/default.gif" class="img-responsive" alt="Rikárdó rendelője"></a></div>
+    <div class="cure-item-info col-sm-3 col-xs-9">
+        <p><a href="#">Rikárdó rendelője<br></a>
+        <span class="icon-glyphicon-marker color-999"></span> 1234 Budapest, Rigó utca 4.</p>
+        <div class="color-aaa"><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star-half red"></span><span class="icon-glyphicon-star"></span> <span class="color-333">3.2/5</span></div>
+        <div class="font-16"><a href="#">(6 vélemény alapján)</a></div>
+        <hr class="hr-small">
+        <div class="font-16">fogorvoslás, szájsebészet<br><a href="#">Összes kezelés &raquo;</a></div>
+    </div>
+    <div class="clearfix visible-xs"></div>
+    <div class="cure-item-times col-sm-8 col-xs-12">
+        <div class="row table-reservation-time-pagination">
+            <div class="col-sm-8 col-xs-6"><div class="reservation-week"><strong>Időpontfoglalás</strong><br>46. hét <span class="color-999">(nov.11. - nov. 18.)</span></div></div>
+            <div class="col-sm-4 col-xs-6">
+                <ul class="pagination pagination-lg marginbottom-0 pull-right">
+                    <li class="previous"><a href="#">«</a></li>
+                    <li class="next"><a href="#">»</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="table-responsive">
+        <table class="table table-bordered table-reservation-time">
+            <tbody><tr>
+                <th class="today"><abbr title="H">Hétfő</abbr><br><small class="normal-weight-font"><abbr title="11">nov</abbr>. 11.</small></th>
+                <th><abbr title="K">Kedd</abbr><br><small class="normal-weight-font"><abbr title="11">nov</abbr>. 12.</small></th>
+                <th><abbr title="Sze">Szerda</abbr><br><small class="normal-weight-font"><abbr title="11">nov</abbr>. 13.</small></th>
+                <th><abbr title="Cs">Csütörtök</abbr><br><small class="normal-weight-font"><abbr title="11">nov</abbr>. 14.</small></th>
+                <th><abbr title="P">Péntek</abbr><br><small class="normal-weight-font"><abbr title="11">nov</abbr>. 15.</small></th>
+                <th><abbr title="Szo">Szombat</abbr><br><small class="normal-weight-font"><abbr title="11">nov</abbr>. 16.</small></th>
+                <th><abbr title="V">Vasárnap</abbr><br><small class="normal-weight-font"><abbr title="11">nov</abbr>. 17.</small></th>
+            </tr>    
+            <tr>
+                <td class="today">
+                    <ul class="list-unstyled reservation-time">
+                        <li><a href="#">17:00</a></li>
+                        <li class="selected"><a href="#">17:30<span class="icon-glyphicon-ok hidden-xs"></span></a></li>
+                        <li><a href="#">18:00</a></li>
+                        <li class="disabled"><a href="#">18:30</a></li>
+                    </ul>
+                </td>
+                <td></td>
+                <td>
+                    <ul class="list-unstyled reservation-time">
+                        <li><a href="#">17:00</a></li>
+                        <li><a href="#">17:30</a></li>
+                        <li><a href="#">18:00</a></li>
+                        <li><a href="#">18:30</a></li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                    <ul class="list-unstyled reservation-time">
+                        <li><a href="#">17:00</a></li>
+                        <li><a href="#">17:30</a></li>
+                        <li><a href="#">18:00</a></li>
+                        <li><a href="#">18:30</a></li>
+                    </ul>
+                </td>
+                <td></td>
+            </tr>
+        </tbody></table>
+        </div>
+    </div>
+	</div>
+	<hr class="hr-small">
+	<div class="row">
+	<div class="col-sm-1 col-xs-3"><a href="#"><img src="img/default.gif" class="img-responsive" alt="Rikárdó rendelője"></a></div>
+    <div class="info col-sm-3 col-xs-9">
+        <p><a href="#">Rikárdó rendelője<br></a>
+        <span class="icon-glyphicon-marker color-999"></span> 1234 Budapest, Rigó utca 4.</p>
+        <div class="color-aaa"><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star-half red"></span><span class="icon-glyphicon-star"></span> <span class="color-333">3.2/5</span></div>
+        <div class="font-16"><a href="#">(6 vélemény alapján)</a></div>
+        <hr class="hr-small">
+        <div class="font-16">fogorvoslás, szájsebészet<br><a href="#">Összes kezelés &raquo;</a></div>
+    </div>
+    <div class="clearfix visible-xs"></div>
+    <div class="times col-sm-8 col-xs-12">
+        <div class="row table-reservation-time-pagination">
+            <div class="col-sm-8 col-xs-6"><div class="reservation-week"><strong>Időpontfoglalás</strong><br>46. hét <span class="color-999">(nov. 11. - nov. 18.)</span></div></div>
+            <div class="col-sm-4 col-xs-6">
+                <ul class="pagination pagination-lg marginbottom-0 pull-right">
+                    <li class="previous"><a href="#">«</a></li>
+                    <li class="next"><a href="#">»</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="table-responsive">
+        <table class="table table-bordered table-reservation-time">
+            <tbody><tr>
+                <th class="today"><abbr title="H">Hétfő</abbr><br><small class="normal-weight-font"><abbr title="11">nov</abbr>. 11.</small></th>
+                <th><abbr title="K">Kedd</abbr><br><small class="normal-weight-font"><abbr title="11">nov</abbr>. 12.</small></th>
+                <th><abbr title="Sze">Szerda</abbr><br><small class="normal-weight-font"><abbr title="11">nov</abbr>. 13.</small></th>
+                <th><abbr title="Cs">Csütörtök</abbr><br><small class="normal-weight-font"><abbr title="11">nov</abbr>. 14.</small></th>
+                <th><abbr title="P">Péntek</abbr><br><small class="normal-weight-font"><abbr title="11">nov</abbr>. 15.</small></th>
+                <th><abbr title="Szo">Szombat</abbr><br><small class="normal-weight-font"><abbr title="11">nov</abbr>. 16.</small></th>
+                <th><abbr title="V">Vasárnap</abbr><br><small class="normal-weight-font"><abbr title="11">nov</abbr>. 17.</small></th>
+            </tr>    
+            <tr>
+                <td class="today">
+                    <ul class="list-unstyled reservation-time">
+                        <li><a href="#">17:00</a></li>
+                        <li class="selected"><a href="#">17:30<span class="icon-glyphicon-ok hidden-xs"></span></a></li>
+                        <li><a href="#">18:00</a></li>
+                        <li class="disabled"><a href="#">18:30</a></li>
+                    </ul>
+                </td>
+                <td></td>
+                <td>
+                    <ul class="list-unstyled reservation-time">
+                        <li><a href="#">17:00</a></li>
+                        <li><a href="#">17:30</a></li>
+                        <li><a href="#">18:00</a></li>
+                        <li><a href="#">18:30</a></li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
+                <td>
+                    <ul class="list-unstyled reservation-time">
+                        <li><a href="#">17:00</a></li>
+                        <li><a href="#">17:30</a></li>
+                        <li><a href="#">18:00</a></li>
+                        <li><a href="#">18:30</a></li>
+                    </ul>
+                </td>
+                <td></td>
+            </tr>
+        </tbody></table>
+        </div>
+    </div>
+	</div>
+</div>
+
+<!-- end clinics list -->
+
+<!-- treatments list -->
+<h2 class="h2-iconic-underlined" id="treatments">
+    <span class="icon-glyphicon-cross"></span>Orvosi kezelések
+</h2>
+<div class="row marginbottom-30 doctor-treatment-list">
+    <div class="col-lg-3 col-md-3 hidden-xs hidden-sm col-xs-12 col-sm-12 doctor-list-filter">
+    	<div class="hidden-xs hidden-sm">
+        <p class="font-20">Kategória</p>
+        <ul class="list-unstyled marginbottom-30">
+        	<li class="active"><div class="checkbox"><label><input type="checkbox" checked> Diagnosztika <span class="color-666">(12)</span></label></div></li>
+            <li><div class="checkbox"><label><input type="checkbox"> Esztétikai fogászat <span class="color-666">(+34)</span></label></div></li>
+            <li class="disabled"><div class="checkbox"><label><input type="checkbox" disabled> Labordiagnosztika <span class="color-666">(33)</span></label></div></li>
+            <li><div class="checkbox"><label><input type="checkbox"> Általános ultrahang <span class="color-666">(2)</span></label></div></li>
+            <li><div class="checkbox"><label><input type="checkbox"> Egyéb vizsgálatok <span class="color-666">(5)</span></label></div></li>
+        </ul>
+        <p class="font-20">Ár</p>
+        <ul class="list-unstyled marginbottom-30">
+        	<li><div class="checkbox"><label><input type="checkbox"> 10 000 Ft alatt <span class="color-666">(7)</span></label></div></li>
+            <li><div class="checkbox"><label><input type="checkbox"> 10 000 - 25 000 Ft között <span class="color-666">(23)</span></label></div></li>
+            <li><div class="checkbox"><label><input type="checkbox"> 25 000 Ft felett <span class="color-666">(11)</span></label></div></li>
+        </ul>
+        </div>
+    </div>
+    
+    <!-- for small device -->
+    <div class="col-lg-12 col-xs-12 visible-xs visible-sm marginbottom-30 search-list-filter">
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Kategória <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+            <li><div class="checkbox"><label><input type="checkbox"> Diagnosztika <span class="color-666">(12)</span></label></div></li>
+            <li><div class="checkbox"><label><input type="checkbox"> Esztétikai fogászat <span class="color-666">(34)</span></label></div></li>
+            <li><div class="checkbox"><label><input type="checkbox"> Labordiagnosztika <span class="color-666">(33)</span></label></div></li>
+            <li><div class="checkbox"><label><input type="checkbox"> Általános ultrahang <span class="color-666">(2)</span></label></div></li>
+            <li><div class="checkbox"><label><input type="checkbox"> Egyéb vizsgálatok <span class="color-666">(5)</span></label></div></li>
+        </ul>
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Ár <span class="caret"></span></button>
+        <ul class="dropdown-menu" role="menu">
+            <li><div class="checkbox"><label><input type="checkbox"> 10 000 Ft alatt <span class="color-666">(7)</span></label></div></li>
+            <li><div class="checkbox"><label><input type="checkbox"> 10 000 - 25 000 Ft között <span class="color-666">(23)</span></label></div></li>
+            <li><div class="checkbox"><label><input type="checkbox"> 25 000 Ft felett <span class="color-666">(11)</span></label></div></li>
+        </ul>
+    </div>
+    </div>
+	<!-- for small device -->
+    
+    <div class="col-md-9">
+    	<div class="treatments-list marginbottom-30">
+	        <a href="#" class="row">
+        		<div class="col-sm-6 col-xs-11 treatment-name"><span class="name">Lenyomat - fogfehérítő sínhez - Fogászat</span><br><span class="color-999">Diagnosztika</span></div>
+                <div class="col-sm-2 col-xs-11 treatment-occasion">
+                	<div><span class="icon-glyphicon-doktor hidden-xs"></span> 1 alkalom</div>
+                	<div><span class="icon-glyphicon-clock-2 hidden-xs"></span> 45 perc</div>
+                </div>
+                <div class="col-sm-1 col-xs-11 treatment-price"><strong>7 500 Ft</strong></div>
+                <div class="col-sm-3 hidden-xs treatment-button"><div class="btn btn-grey-to-blue btn-block">Kapcsolatfelvétel &raquo;</div></div>
+    	    </a>
+            <a href="#" class="row">
+        		<div class="col-sm-6 col-xs-11 treatment-name"><span class="name">Lenyomat - fogfehérítő sínhez - Fogászat</span><br><span class="color-999">Diagnosztika</span></div>
+                <div class="col-sm-2 col-xs-11 treatment-occasion">
+                	<div><span class="icon-glyphicon-doktor hidden-xs"></span> 1 alkalom</div>
+                	<div><span class="icon-glyphicon-clock-2 hidden-xs"></span> 45 perc</div>
+                </div>
+                <div class="col-sm-1 col-xs-11 treatment-price"><strong>7 500 Ft</strong></div>
+                <div class="col-sm-3 hidden-xs treatment-button"><div class="btn btn-grey-to-blue btn-block">Időpontfoglalás &raquo;</div></div>
+    	    </a>
+            <a href="#" class="row">
+        		<div class="col-sm-6 col-xs-11 treatment-name"><span class="name">Lenyomat - fogfehérítő sínhez - Fogászat</span><br><span class="color-999">Diagnosztika</span></div>
+                <div class="col-sm-2 col-xs-11 treatment-occasion">
+                	<div><span class="icon-glyphicon-doktor hidden-xs"></span> 1 alkalom</div>
+                	<div><span class="icon-glyphicon-clock-2 hidden-xs"></span> 45 perc</div>
+                </div>
+                <div class="col-sm-1 col-xs-11 treatment-price"><strong>7 500 Ft</strong></div>
+                <div class="col-sm-3 hidden-xs treatment-button"><div class="btn btn-grey-to-blue btn-block">Kapcsolatfelvétel &raquo;</div></div>
+    	    </a>
+            <a href="#" class="row">
+        		<div class="col-sm-6 col-xs-11 treatment-name"><span class="name">Lenyomat - fogfehérítő sínhez - Fogászat</span><br><span class="color-999">Diagnosztika</span></div>
+                <div class="col-sm-2 col-xs-11 treatment-occasion">
+                	<div><span class="icon-glyphicon-doktor hidden-xs"></span> 1 alkalom</div>
+                	<div><span class="icon-glyphicon-clock-2 hidden-xs"></span> 45 perc</div>
+                </div>
+                <div class="col-sm-1 col-xs-11 treatment-price"><strong>7 500 Ft</strong></div>
+                <div class="col-sm-3 hidden-xs treatment-button"><div class="btn btn-grey-to-blue btn-block">Időpontfoglalás &raquo;</div></div>
+    	    </a>
+            <a href="#" class="row">
+        		<div class="col-sm-6 col-xs-11 treatment-name"><span class="name">Lenyomat - fogfehérítő sínhez - Fogászat</span><br><span class="color-999">Diagnosztika</span></div>
+                <div class="col-sm-2 col-xs-11 treatment-occasion">
+                	<div><span class="icon-glyphicon-doktor hidden-xs"></span> 1 alkalom</div>
+                	<div><span class="icon-glyphicon-clock-2 hidden-xs"></span> 45 perc</div>
+                </div>
+                <div class="col-sm-1 col-xs-11 treatment-price"><strong>7 500 Ft</strong></div>
+                <div class="col-sm-3 hidden-xs treatment-button"><div class="btn btn-grey-to-blue btn-block">Kapcsolatfelvétel &raquo;</div></div>
+    	    </a>
+            <a href="#" class="row">
+        		<div class="col-sm-6 col-xs-11 treatment-name"><span class="name">Lenyomat - fogfehérítő sínhez - Fogászat</span><br><span class="color-999">Diagnosztika</span></div>
+                <div class="col-sm-2 col-xs-11 treatment-occasion">
+                	<div><span class="icon-glyphicon-doktor hidden-xs"></span> 1 alkalom</div>
+                	<div><span class="icon-glyphicon-clock-2 hidden-xs"></span> 45 perc</div>
+                </div>
+                <div class="col-sm-1 col-xs-11 treatment-price"><strong>7 500 Ft</strong></div>
+                <div class="col-sm-3 hidden-xs treatment-button"><div class="btn btn-grey-to-blue btn-block">Időpontfoglalás &raquo;</div></div>
+    	    </a>
+        </div>
+        
+        <!-- pagination -->
+        <ul class="pagination pagination-lg marginbottom-30 pull-right">
+            <li class="previous"><a href="#">&laquo;</a></li>
+            <li class="next"><a href="#">&raquo;</a></li>
+        </ul>
+        <ul class="pagination pagination-lg marginbottom-30 pull-right hidden-sm hidden-xs">
+            <li class="active"><span>1</span></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><span>...</span></li>
+            <li><a href="#">12</a></li>
+            <li><a href="#">13</a></li>
+        </ul>
+        <!-- for small device -->
+    		<div class="visible-xs visible-sm marginbottom-30 pull-right font-20 pagination-sm-pagenumber">1/13</div>
+		<!-- for small device -->
+        <!-- end pagination -->
+    </div>
+</div>
+<!-- end treatments list -->
+
+<!-- ratings -->
+<h2 class="h2-iconic-underlined" id="ratings">
+    <span class="icon-glyphicon-thumbs-up-full"></span>Megbízható vélemények az orvosról
+</h2>
+<div class="row marginbottom-30 doctor-ratings">
+    <div class="col-lg-3 col-md-3 hidden-xs hidden-sm col-xs-12 col-sm-12 doctor-list-filter">
+    	<div class="hidden-xs hidden-sm">
+        <p class="font-20">Ez a kezelés legyen elől</p>
+        <ul class="list-unstyled list-filter marginbottom-30">
+        	<li class="active"><a href="#" class="link-dark">Diagnosztika</a> <span class="color-666">(12)</span></li>
+            <li><a href="#" class="link-dark">Esztétikai fogászat</a> <span class="color-666">(34)</span></li>
+            <li><a href="#" class="link-dark">Labordiagnosztika</a> <span class="color-666">(33)</span></li>
+            <li><a href="#" class="link-dark">Általános ultrahang</a> <span class="color-666">(2)</span></li>
+            <li><a href="#" class="link-dark">Egyéb vizsgálatok</a> <span class="color-666">(5)</span></li>
+        </ul>
+        </div>
+    </div>
+    
+    <div class="col-lg-9 col-md-9">
+    	<ol class="breadcrumb">
+            <li><a href="#">Összes vélemény</a></li>
+            <li class="active hidden-xs hidden-sm">Diagnosztika</li>
+            <li class="visible-xs visible-sm">
+            <!-- for small device -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Ez a kezelés legyen elől <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">Diagnosztika <span class="color-666">(12)</span></a></li>
+                    <li><a href="#">Esztétikai fogászat <span class="color-666">(34)</span></a></li>
+                    <li><a href="#">Labordiagnosztika <span class="color-666">(33)</span></a></li>
+                    <li><a href="#">Általános ultrahang <span class="color-666">(2)</span></a></li>
+                    <li><a href="#">Egyéb vizsgálatok <span class="color-666">(5)</span></a></li>
+                </ul>
+            </div>
+			<!-- endfor small device -->
+            </li>
+		</ol>
+    	<div class="doctor-one-rating">
+        	<p class="rating-treatment-type font-20 color-666">FOGBEÜLTETÉS - MIS® fog implantátum rendszer ()</p>
+            <p class="positive-rating"><span>+</span>Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+            <p class="negative-rating"><span>-</span>Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+            <p class="overall-rating">Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+            <div class="rating-person-name">
+            	3.5/5 <div class="rating-person-stars color-aaa"><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star-half red"></span><span class="icon-glyphicon-star"></span></div>
+                Kovács Béláné, Budapest - 2013.09.10.
+            </div>
+        </div>
+        <div class="doctor-one-rating">
+        	<p class="rating-treatment-type font-20 color-666">FOGBEÜLTETÉS - MIS® fog implantátum rendszer ()</p>
+            <p class="positive-rating"><span>+</span>Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+            <p class="negative-rating"><span>-</span>Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+            <p class="overall-rating">Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+            <div class="rating-person-name">
+            	3.5/5 <div class="rating-person-stars color-aaa"><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star-half red"></span><span class="icon-glyphicon-star"></span></div>
+                Kovács Béláné, Budapest - 2013.09.10.
+            </div>
+        </div>
+        <div class="doctor-one-rating">
+        	<p class="rating-treatment-type font-20 color-666">FOGBEÜLTETÉS - MIS® fog implantátum rendszer ()</p>
+            <p class="positive-rating"><span>+</span>Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+            <p class="negative-rating"><span>-</span>Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+            <p class="overall-rating">Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+            <div class="rating-person-name">
+            	3.5/5 <div class="rating-person-stars color-aaa"><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star-half red"></span><span class="icon-glyphicon-star"></span></div>
+                Kovács Béláné, Budapest - 2013.09.10.
+            </div>
+        </div>
+        <div class="doctor-one-rating">
+        	<p class="rating-treatment-type font-20 color-666">FOGBEÜLTETÉS - MIS® fog implantátum rendszer ()</p>
+            <p class="positive-rating"><span>+</span>Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+            <p class="negative-rating"><span>-</span>Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+            <p class="overall-rating">Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+            <div class="rating-person-name">
+            	3.5/5 <div class="rating-person-stars color-aaa"><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star-half red"></span><span class="icon-glyphicon-star"></span></div>
+                Kovács Béláné, Budapest - 2013.09.10.
+            </div>
+        </div>
+        <div class="doctor-one-rating">
+        	<p class="rating-treatment-type font-20 color-666">FOGBEÜLTETÉS - MIS® fog implantátum rendszer ()</p>
+            <p class="positive-rating"><span>+</span>Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+            <p class="negative-rating"><span>-</span>Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+            <p class="overall-rating">Nulla porttitor accumsan tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+            <div class="rating-person-name">
+            	3.5/5 <div class="rating-person-stars color-aaa"><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star red"></span><span class="icon-glyphicon-star-half red"></span><span class="icon-glyphicon-star"></span></div>
+                Kovács Béláné, Budapest - 2013.09.10.
+            </div>
+        </div>
+        <!-- pagination -->
+        <ul class="pagination pagination-lg marginbottom-30 pull-right">
+            <li class="previous"><a href="#">&laquo;</a></li>
+            <li class="next"><a href="#">&raquo;</a></li>
+        </ul>
+        <ul class="pagination pagination-lg marginbottom-30 pull-right hidden-sm hidden-xs">
+            <li class="active"><span>1</span></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><span>...</span></li>
+            <li><a href="#">12</a></li>
+            <li><a href="#">13</a></li>
+        </ul>
+        <!-- for small device -->
+    		<div class="visible-xs visible-sm marginbottom-30 pull-right font-20 pagination-sm-pagenumber">1/13</div>
+		<!-- for small device -->
+        <!-- end pagination -->
+    </div>
+</div>
+<!-- end ratings -->
+
+<!-- contact form -->
+<h2 class="h2-iconic-underlined" id="contact">
+    <span class="icon-glyphicon-envelope"></span>Kapcsolatfelvétel 
+</h2>
+<div class="marginbottom-30 doctor contact-form">
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+        	<label for="inputName" class="col-lg-2 control-label">Teljes neved <strong class="color-doctorblue">*</strong></label>
+            <div class="col-lg-10">
+            	<input type="text" class="form-control form-mustfill" id="inputName" placeholder="Teljes neved">
+            </div>
+        </div>
+        <div class="form-group">
+        	<label for="inputEmail" class="col-lg-2 control-label">E-mail címed <strong class="color-doctorblue">*</strong></label>
+            <div class="col-lg-10">
+            	<input type="text" class="form-control form-mustfill" id="inputEmail" placeholder="E-mail címed">
+            </div>
+        </div>
+        <div class="form-group">
+        	<label for="inputTelephone" class="col-lg-2 control-label">Telefonszámod <strong class="color-doctorblue">*</strong></label>
+            <div class="col-lg-10">
+            	<input type="text" class="form-control form-mustfill" id="inputTelephone" placeholder="Telefonszámod">
+            </div>
+        </div>
+        <div class="form-group">
+        	<label for="inputService" class="col-lg-2 control-label">Orvosi szolgáltatás</label>
+            <div class="col-lg-10">
+            	<select class="form-control" id="inputService"><option value="">Orvosi szolgáltatás</option></select>
+            </div>
+        </div>
+        <div class="form-group">
+        	<label for="inputPassword" class="col-lg-2 control-label">Üzenet tárgya</label>
+            <div class="col-lg-10">
+            	<input type="text" class="form-control" id="inputPassword" placeholder="Teljes neved">
+            </div>
+        </div>
+        <div class="form-group">
+        	<label for="inputText" class="col-lg-2 control-label">Üzenet <strong class="color-doctorblue">*</strong></label>
+            <div class="col-lg-10">
+            	<textarea class="form-control form-mustfill" id="inputText" rows="6" placeholder="Írd ide kérdésed, panaszod, időpontegyeztetéssel kapcsolatos kérésed"></textarea>
+            </div>
+        </div>
+        <div class="form-group">
+        	<div class="col-lg-10 col-lg-offset-2 color-999"><strong class="color-doctorblue">*</strong> -gal jelölt mezők kitöltése kötelező</div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button type="submit" class="btn btn-primary btn-lg">Üzenet küldése</button>
+            </div>
+        </div>
+    </form>
+</div>
+<!-- end contact form -->
+</div>
+</div>
+<!-- end container -->
+</div>
+<!-- footer -->
+<footer>
+
+<div class="footer-usp">
+<div class="container">
+	<div class="row">
+    	<div class="col-lg-4 col-md-4 col-sm-4">
+        	<div class="usp-element">
+            	<span class="icon-glyphicon-ok"></span>
+                <strong>Helló doki</strong><br>nem kell félni nem fog fájni
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+        	<div class="usp-element">
+            	<span class="icon-glyphicon-ok"></span>
+                <strong>Helló doki</strong><br>nem kell félni nem fog fájni
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+        	<div class="usp-element">
+            	<span class="icon-glyphicon-ok"></span>
+                <strong>Helló doki</strong><br>nem kell félni nem fog fájni
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="footer-links">
+<div class="container">
+<div class="row">
+	<div class="col-lg-2 col-md-2 col-sm-2 marginbottom-30">
+    	<p class="font-20">Rólunk</p>
+        <ul class="footer-link-list">
+        	<li><a href="#">Bemutatkozás</a></li>
+			<li><a href="#">Adatvédelem</a></li>
+			<li><a href="#">Regisztáció</a></li>
+			<li><a href="#">Belépés</a></li>
+        </ul>
+        <a href="/"><img src="img/logo-footer.png" alt="Doklist.com" class="img-responsive"></a>
+    </div>
+    <div class="col-lg-7 col-md-7 col-sm-7 marginbottom-30">
+    	<p class="font-20">Rendelőlista a közeledben</p>
+        <a href="http://aszod.Doklist.com" target="_self">Aszód</a>, <a href="http://baja.Doklist.com" target="_self">Baja</a>, <a href="http://balatonfured.Doklist.com" target="_self">Balatonfüred</a>, <a href="http://baracska.Doklist.com" target="_self">Baracska</a>, <a href="http://bekescsaba.Doklist.com" target="_self">Békéscsaba</a>, <a href="http://berettyoujfalu.Doklist.com" target="_self">Berettyóújfalu</a>, <a href="http://biatorbagy.Doklist.com" target="_self">Biatorbágy</a>, <a href="http://boly.Doklist.com" target="_self">Bóly</a>, <a href="http://budakeszi.Doklist.com" target="_self">Budakeszi</a>, <a href="http://budaors.Doklist.com" target="_self">Budaörs</a>, <a href="http://budapest.Doklist.com" target="_self">Budapest</a>, <a href="http://budapest-1.Doklist.com" target="_self">I.&nbsp;kerület</a>, <a href="http://budapest-10.Doklist.com" target="_self">X.&nbsp;kerület</a>, <a href="http://budapest-11.Doklist.com" target="_self">XI.&nbsp;kerület</a>, <a href="http://budapest-12.Doklist.com" target="_self">XII.&nbsp;kerület</a>, <a href="http://budapest-13.Doklist.com" target="_self">XIII.&nbsp;kerület</a>, <a href="http://budapest-14.Doklist.com" target="_self">XIV.&nbsp;kerület</a>, <a href="http://budapest-15.Doklist.com" target="_self">XV.&nbsp;kerület</a>, <a href="http://budapest-16.Doklist.com" target="_self">XVI.&nbsp;kerület</a>, <a href="http://budapest-17.Doklist.com" target="_self">XVII.&nbsp;kerület</a>, <a href="http://budapest-18.Doklist.com" target="_self">XVIII.&nbsp;kerület</a>, <a href="http://budapest-19.Doklist.com" target="_self">XIX.&nbsp;kerület</a>, <a href="http://budapest-2.Doklist.com" target="_self">II.&nbsp;kerület</a>, <a href="http://budapest-20.Doklist.com" target="_self">XX.&nbsp;kerület</a>, <a href="http://budapest-21.Doklist.com" target="_self">XXI.&nbsp;kerület</a>, <a href="http://budapest-22.Doklist.com" target="_self">XXII.&nbsp;kerület</a>, <a href="http://budapest-23.Doklist.com" target="_self">XXIII.&nbsp;kerület</a>, <a href="http://budapest-3.Doklist.com" target="_self">III.&nbsp;kerület</a>, <a href="http://budapest-4.Doklist.com" target="_self">IV.&nbsp;kerület</a>, <a href="http://budapest-5.Doklist.com" target="_self">V.&nbsp;kerület</a>, <a href="http://budapest-6.Doklist.com" target="_self">VI.&nbsp;kerület</a>, <a href="http://budapest-7.Doklist.com" target="_self">VII.&nbsp;kerület</a>, <a href="http://budapest-8.Doklist.com" target="_self">VIII.&nbsp;kerület</a>, <a href="http://budapest-9.Doklist.com" target="_self">IX.&nbsp;kerület</a>, <a href="http://cegled.Doklist.com" target="_self">Cegléd</a>, <a href="http://csenger.Doklist.com" target="_self">Csenger</a>, <a href="http://dabas.Doklist.com" target="_self">Dabas</a>, <a href="http://debrecen.Doklist.com" target="_self">Debrecen</a>, <a href="http://dorog.Doklist.com" target="_self">Dorog</a>, <a href="http://dunaharaszti.Doklist.com" target="_self">Dunaharaszti</a>, <a href="http://dunakeszi.Doklist.com" target="_self">Dunakeszi</a>, <a href="http://dunaujvaros.Doklist.com" target="_self">Dunaújváros</a>, <a href="http://eger.Doklist.com" target="_self">Eger</a>, <a href="http://enying.Doklist.com" target="_self">Enying</a>, <a href="http://erd.Doklist.com" target="_self">Érd</a>, <a href="http://erdokertes.Doklist.com" target="_self">Erdőkertes</a>, <a href="http://esztergom.Doklist.com" target="_self">Esztergom</a>, <a href="http://gesztered.Doklist.com" target="_self">Geszteréd</a>, <a href="http://god.Doklist.com" target="_self">Göd</a>, <a href="http://godollo.Doklist.com" target="_self">Gödöllő</a>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 marginbottom-30">
+    	<p class="font-20">Rendelőknek</p>
+        <ul class="footer-link-list">
+        	<li><a href="#">Regisztráció</a></li>
+			<li><a href="#">Belépés</a></li>
+			<li><a href="#">ÁSZF</a></li>
+			<li><a href="#">Kíváló Rendelő program</a></li>
+            <li><a href="#">Időpontfoglalás</a></li>
+        </ul>
+    </div>
+</div>
+</div>
+<div class="footer-bottom-line">
+	<div class="container">
+    	<p>Oldalainkon a rendelők által szolgáltatott információk és árak tájékoztató jellegűek, kérünk, hogy a szolgáltatás igénybevétele előtt a rendelő honlapján is tájékozódj. Az esetleges hibákért, elírásokért nem áll módunkban felelősséget vállalni.</p>
+        © 2013 www.doklist.com Minden jog fenntartva.
+    </div>
+</div>
+</div>
+
+</footer>
+<!-- end footer -->
+
+<!-- map modal -->
+<div class="modal fade map-modal" id="mapModal" tabindex="-1" role="dialog" aria-labelledby="mapModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Térkép: Dr Obadela Thompson</h4>
+            </div>
+            <div class="modal-body">
+                <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?daddr=ahamz%4047.285284552580066,19.893150329589844&amp;ie=UTF8&amp;t=m&amp;ll=47.285285,19.89315&amp;spn=0.003115,0.005622&amp;z=12&amp;output=embed"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Térkép bezárása</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end map modal -->
+
+<!-- registration modal -->
+<div class="modal fade registration-modal" id="regModal" tabindex="-1" role="dialog" aria-labelledby="regModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+    <div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    	<h4 class="modal-title">Készítsd el Doklist.com fiókod</h4>
+    </div>
+    <div class="modal-body">
+    	<div class="well well-small"><p><strong>Miért jó, ha van Doklist.com fiókod?</strong></p>
+    		<div class="usp-element">
+            	<span class="icon-glyphicon-ok"></span>
+                <strong>Helló doki</strong><br>nem kell félni nem fog fájni
+            </div>
+            <div class="usp-element">
+            	<span class="icon-glyphicon-ok"></span>
+                <strong>Helló doki</strong><br>nem kell félni nem fog fájni
+            </div>
+        </div>
+        <div class="text-center social-reg-buttons">
+            <p><a href="#" class="btn btn-facebook btn-block"><span class="icon-glyphicon-facebook"></span> Regisztráció Facebook fiókkal</a>
+            <a href="#" class="btn btn-danger btn-block"><span class="icon-glyphicon-google-plus"></span> Regisztráció Google+ fiókkal</a></p>
+            <p>Csak 2 kattintás! Nem posztolunk semmit a faladra, csak a regisztrációhoz használjuk az adatokat!</p>
+        </div>
+        <div class="hr-text">
+            <div class="hr-text-holder">vagy</div>
+            <div class="hr-rule-left"></div>
+            <div class="hr-rule-right"></div>
+        </div>
+        <p class="text-center reg-email-link"><a href="#"><span class="caret caret-right"></span>Regisztrálj email címeddel</a></p>
+        <form role="form">
+        	<div class="form-group">
+    	        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Szolgáltató neve" data-toggle="popover" title="" data-content="Ez fog az adatlapodon megjelenni" data-original-title="Miért adj meg nevet?">
+            </div>
+            <div class="form-group">
+    	        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="E-mail cím" data-toggle="popover" title="" data-content="Ezen keresztül fogunk Veled kommunikálni" data-original-title="Miért adj meg email címet?">
+            </div>
+            <div class="form-group">
+    	        <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Jelszó" data-toggle="popover" title="" data-content="Amit könnyen megjegyzel de mások nem ismernek" data-original-title="Milyen jelszót adj meg?">
+            </div>
+            <div class="checkbox">
+                <label>
+                	<input type="checkbox" value="">
+                	<small class="font-12">Elfogadom az <a href="#">általános szerződési feltételeket</a>.</small>
+                </label>
+            </div>
+            <a href="#" class="btn btn-primary btn-block">Regisztráció</a>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Ablak bezárása</button>
+    </div>
+</div>
+</div>
+</div>
+<!-- end registration modal -->
+ 
+<!-- JavaScript -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap-tagsinput.min.js"></script>
+<script src="js/gmap-api-profile.js"></script>
+<script type="text/javascript" src="mmenu/jquery.mmenu.min.all.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
+<script src="js/icheck.js"></script>
+<script src="js/scripts.js"></script>
+</div>
+</body>
+</html>
